@@ -33,21 +33,6 @@ function loadAndSortTowns() {
     .then((towns) => towns.sort((a, b) => a.name.localeCompare(b.name)));
 }
 
-function fetch(url) {
-  return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-    xhr.responseType = 'json';
-    xhr.send();
-    xhr.addEventListener('load', () => {
-      if (xhr.status >= 400) {
-        reject();
-      } else {
-        resolve();
-      }
-    });
-  });
-}
 /*function loadAndSortTowns() {
 
 
